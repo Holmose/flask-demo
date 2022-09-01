@@ -42,7 +42,7 @@ jobs:
         uses: InformaticsMatters/trigger-ci-action@1.0.1
         with:
           ci-owner: Holmose
-          ci-repository: flask-demo-kustomize
+          ci-repository: flask-demo-kustomize-1
           ci-ref: refs/heads/master
           ci-user: Holmose
           ci-user-token: ${{ secrets.CI_TOKEN }}
