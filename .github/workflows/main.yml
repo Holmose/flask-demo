@@ -37,8 +37,8 @@ jobs:
         run: |
           make image
           echo ${{ secrets.REGISTRY }}
-          docker tag flask-demo:latest ${{ secrets.REGISTRY }}/kubernertes_containers/flask-demo:${{ github.sha }}
-          docker push ${{ secrets.REGISTRY }}/kubernertes_containers/flask-demo:${{ github.sha }}
+          docker tag flask-demo:latest registry.cn-beijing.aliyuncs.com/kubernertes_containers/flask-demo:${{ github.sha }}
+          docker push registry.cn-beijing.aliyuncs.com/kubernertes_containers/flask-demo:${{ github.sha }}
 
       - name: Trigger CI
         uses: InformaticsMatters/trigger-ci-action@1.0.1
