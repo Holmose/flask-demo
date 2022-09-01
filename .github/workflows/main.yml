@@ -25,13 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Docker Login
-        uses: docker/login-action@v2.0.0
+      - name: Alibaba Cloud Container Registry
+        uses: aliyun/acr-login@v1
         with:
-          registry: ${{ secrets.REGISTRY }}
+          login-server: ${{ secrets.REGISTRY }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          logout: true
 
       # Runs a set of commands using the runners shell
       - name: build image
