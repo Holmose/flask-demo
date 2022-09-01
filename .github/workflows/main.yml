@@ -36,6 +36,7 @@ jobs:
       - name: build image
         run: |
           make image
+          echo ${{ secrets.REGISTRY }}
           docker tag flask-demo:latest ${{ secrets.REGISTRY }}/kubernertes_containers/flask-demo:${{ github.sha }}
           docker push ${{ secrets.REGISTRY }}/kubernertes_containers/flask-demo:${{ github.sha }}
 
